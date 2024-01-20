@@ -1,5 +1,4 @@
-package com.example.timeschedule;
-
+package com.ariyanjakaria.lockquize;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
