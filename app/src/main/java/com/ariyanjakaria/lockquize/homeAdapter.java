@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.wajahatkarim3.easyflipview.EasyFlipView;
+
 import java.util.List;
 
 public class homeAdapter extends RecyclerView.Adapter<homeAdapter.viewHolder> {
@@ -53,7 +55,7 @@ public class homeAdapter extends RecyclerView.Adapter<homeAdapter.viewHolder> {
             // Handle the case where colorCode is null or empty, e.g., set a default color.
         }
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+     /*   holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(touch==true) {
@@ -69,6 +71,24 @@ public class homeAdapter extends RecyclerView.Adapter<homeAdapter.viewHolder> {
                 }
 
 
+            }
+        });
+
+      */
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                    // Check if EasyFlipView is present in the layout
+                    EasyFlipView easyFlipView = holder.itemView.findViewById(R.id.easyFlipView);
+
+                    // Check if the library is included in your layout
+                    if (easyFlipView != null) {
+                        // Flip the view
+                        easyFlipView.flipTheView();
+                    }
             }
         });
 

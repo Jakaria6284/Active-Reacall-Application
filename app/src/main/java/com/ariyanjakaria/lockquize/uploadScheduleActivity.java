@@ -133,12 +133,12 @@ public class uploadScheduleActivity extends AppCompatActivity {
                                         String classtypee= value.getString("class");
                                         String building= value.getString("building");
                                         String Rooom= value.getString("room");
-                                        String Teacherr= value.getString("teacher");
+                                       // String Teacherr= value.getString("teacher");
 
                                         classtype.setHint(classtypee);
                                         Building.setHint(building);
                                         Room.setHint(Rooom);
-                                        Teacher.setHint(Teacherr);
+                                       // Teacher.setHint(Teacherr);
 
 
 
@@ -149,47 +149,21 @@ public class uploadScheduleActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String sub = Subject.getText().toString();
-                String classType=classtype.getText().toString();
-                String Build = Building.getText().toString();
-                String Rom = Room.getText().toString();
+
                 String Tech = Teacher.getText().toString();
-                String Links = Link.getText().toString();
-                String Inter = Interval.getText().toString();
-                String Endd = End.getText().toString();
-                String Beginn = Begin.getText().toString();
-                String Stopp = Stop.getText().toString();
 
-                if (sub.isEmpty() || classType.isEmpty() || Build.isEmpty() || Rom.isEmpty() || Tech.isEmpty() || Links.isEmpty()
-                        || Inter.isEmpty() || Endd.isEmpty() || Beginn.isEmpty() || Stopp.isEmpty()) {
-
-                    Toast.makeText(uploadScheduleActivity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                int INterval = Integer.parseInt(Inter);
-                int ENDdate = Integer.parseInt(Endd);
 
                 SimpleDateFormat sdf = new SimpleDateFormat("EEEE d MMMM yyyy", Locale.US);
                 Calendar currentCalendar = Calendar.getInstance();
                 currentCalendar.setTime(selectedDate);
-
-                for (long i = 0; i < ENDdate / INterval; i++) {
                     formattedDate = sdf.format(selectedDate);
                     Map<String, Object> eventData = new HashMap<>();
                     eventData.put("subject", sub);
-                    eventData.put("class",classType);
-                    eventData.put("building", Build);
-                    eventData.put("room", Rom);
+
                     eventData.put("teacher", Tech);
-                    eventData.put("link", Links);
-                    eventData.put("interval", Inter);
-                    eventData.put("end", Endd);
-                    eventData.put("begin", Beginn);
-                    eventData.put("stop", Stopp);
-                    eventData.put("color", holi);
+
                     eventData.put("date",formattedDate);
-                    eventData.put("interval",Inter);
-                    eventData.put("end",Endd);
+
 
                     firebaseFirestore.collection("USER")
                             .document(firebaseUser.getUid())
@@ -212,9 +186,8 @@ public class uploadScheduleActivity extends AppCompatActivity {
                                 }
                             });
 
-                    currentCalendar.add(Calendar.DAY_OF_MONTH, INterval);
-                    selectedDate.setTime(currentCalendar.getTimeInMillis());
-                }
+
+
             }
         });
     }
