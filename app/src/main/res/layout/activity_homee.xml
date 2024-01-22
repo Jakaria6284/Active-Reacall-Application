@@ -122,7 +122,7 @@
         android:id="@+id/eventrecycler"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_450sdp"
-        android:background="#C3B3B3"
+        android:background="#DDCECE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
