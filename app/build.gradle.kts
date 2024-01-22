@@ -50,5 +50,6 @@ dependencies {
     implementation ("com.intuit.ssp:ssp-android:1.1.0")
     implementation ("com.github.skydoves:colorpickerview:2.3.0")
     implementation ("com.wajahatkarim:EasyFlipView:3.0.3")
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
 
 }

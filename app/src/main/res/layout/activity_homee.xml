@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DDCECE"
+    android:background="#F3ECEC"
     tools:context=".homeeActivity">
 
     <LinearLayout
@@ -17,24 +17,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/threeber"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_marginStart="@dimen/_8sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:src="@drawable/threeber" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:src="@drawable/download"/>
 
         <TextView
             android:id="@+id/Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="@dimen/_60sdp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:gravity="center"
-            android:text="Schedule"
+            android:text="Actively Memory Recall"
             android:textColor="#000000"
-            android:textSize="@dimen/_18ssp"
+            android:textSize="@dimen/_16ssp"
             android:textStyle="bold" />
 
 
@@ -44,7 +43,7 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_60sdp"
-        android:background="#FDFCFC"
+        android:background="#FFFFFF"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -104,17 +103,17 @@
         android:layout_width="@dimen/_40sdp"
         android:layout_height="@dimen/_40sdp"
         android:layout_gravity="center"
-        android:layout_marginRight="@dimen/_12sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:layout_marginBottom="@dimen/_2sdp"
         android:backgroundTint="#322E2E"
         android:src="@drawable/add"
         app:elevation="6dp"
-        android:layout_marginBottom="@dimen/_2sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.845"
+        app:layout_constraintHorizontal_bias="0.947"
         app:layout_constraintStart_toEndOf="@+id/calender"
         app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.995"
+        app:layout_constraintVertical_bias="1.0"
         app:maxImageSize="@dimen/_20sdp"
         app:pressedTranslationZ="12dp" />
 
@@ -122,7 +121,7 @@
         android:id="@+id/eventrecycler"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_450sdp"
-        android:background="#DDCECE"
+        android:background="#F3ECEC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

@@ -36,7 +36,7 @@ import java.util.Locale;
 public class homeeActivity extends AppCompatActivity {
   List<homeModel>homeModelList=new ArrayList<>();
     private ImageView previousbtn,nextbtn,Threebar;
-    private TextView currentdate,Apptitle;
+    private TextView currentdate;
     ImageView callender;
     Calendar calendar;
     FloatingActionButton EventAdd;
@@ -60,32 +60,17 @@ public class homeeActivity extends AppCompatActivity {
         firebaseFirestore=FirebaseFirestore.getInstance();
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseUser=firebaseAuth.getCurrentUser();
-        Apptitle=findViewById(R.id.Title);
+       // Apptitle=findViewById(R.id.Title);
 
-        firebaseFirestore.collection("USER")
-                .document(firebaseUser.getUid())
-                .addSnapshotListener(new EventListener<DocumentSnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                        String name=value.getString("AppName");
-
-                        Apptitle.setText(name);
-                    }
-                });
 
 
         LinearLayoutManager layoutManager=new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
 
-        Threebar=findViewById(R.id.threeber);
+       // Threebar=findViewById(R.id.threeber);
 
-        Threebar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(homeeActivity.this,settingActivity.class));
-            }
-        });
+
 
 
 
