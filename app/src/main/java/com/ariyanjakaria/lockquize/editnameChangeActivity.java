@@ -90,16 +90,7 @@ public class editnameChangeActivity extends AppCompatActivity {
             }
         });
 
-        Info.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                settinglayout.setVisibility(View.GONE);
-                Edittextfields.setVisibility(View.VISIBLE);
 
-
-
-            }
-        });
 
         Submit.setOnClickListener(new View.OnClickListener() {
             @Override
